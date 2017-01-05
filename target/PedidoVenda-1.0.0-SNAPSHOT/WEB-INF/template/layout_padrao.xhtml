@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+    
+    <h:head>
+        <title><ui:insert name="title">Sistema Pedido Venda</ui:insert></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <h:outputStylesheet library="css" name="sistema.css" />
+    </h:head>
+
+    <p:ajaxStatus styleClass="ajax-status">
+        <f:facet name="start">
+            <h:graphicImage library="images" name="load.gif" />
+        </f:facet>
+        <f:facet name="complete">
+            <h:outputText value="" />
+        </f:facet>
+    </p:ajaxStatus>
+    
+    
+    <h:body>
+        <header>
+            <div>
+                <h:link>
+                    <p:graphicImage style="width: 150px; height: 90px" library="images" name="logo.png" />
+                </h:link>
+            </div>
+        </header>
+        
+    <div id="conteudo">
+        <ui:insert name="corpo" ></ui:insert>
+    </div>
+    
+    <p:separator style="margin-top: 20px" />
+   
+    <footer>
+        Sistema Online Protector Manager Administrator Descalsor LTDA @Copyrigth
+    </footer>
+    
+    </h:body>
+    
+
+</html>

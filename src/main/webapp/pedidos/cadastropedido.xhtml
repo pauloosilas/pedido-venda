@@ -1,0 +1,36 @@
+<ui:composition template="/WEB-INF/template/layout_padrao.xhtml"
+ xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title">Novo Pedido</ui:define>
+   
+    <ui:define name="corpo">
+        
+        <br/><br/> <br/><br/>
+        <h1>Novo Pedido </h1>
+        
+              
+            <ui:include src="/WEB-INF/template/pedidos/botoespedidos.xhtml" />
+            <ui:include src="/WEB-INF/template/pedidos/capapedido.xhtml" />
+       
+            <p:tabView style="padding-top: 20px" >
+                <p:tab title="Itens">
+                       <ui:include src="/WEB-INF/template/pedidos/itenspedido.xhtml" />
+                       
+                </p:tab>
+                <p:tab title="Dados Entrega">
+                    <ui:include src="/WEB-INF/template/pedidos/dadosentregapedido.xhtml" />
+                    
+                </p:tab>
+                
+                <p:tab title="Observaçoes">
+                    <ui:include src="/WEB-INF/template/pedidos/observacaopedido.xhtml" />
+                    
+                </p:tab>
+            </p:tabView>
+            
+    </ui:define>
+</ui:composition>

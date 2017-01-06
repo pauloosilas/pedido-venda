@@ -1,0 +1,98 @@
+<ui:composition template="/WEB-INF/template/layout_padrao.xhtml"
+ xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title">Pesquisar Produto</ui:define>
+
+    <ui:define name="corpo">
+        <br/><br/> <br/><br/>
+        <h1>Pesquisar Produto</h1>
+        <p:toolbar style="margin-top: 20px">
+            
+            <p:toolbarGroup>
+                <p:button value="Pesquisar" />
+                
+            </p:toolbarGroup>
+          
+            <p:toolbarGroup align="right">
+                <p:button value="Novo" outcome="/produtos/cadastroproduto.xhtml"/>
+               
+            </p:toolbarGroup>
+            
+        </p:toolbar>
+        
+         <br/>
+         <h:form>
+             
+         <p:panelGrid columns="2" style="width: 100% ; margin-top: 30px" columnClasses="rotulo , campo">
+                <p:outputLabel value="Numero" />
+                <h:panelGroup>
+                    <p:inputText size="10" />
+                       a 
+                    <p:inputText size="10" />
+                </h:panelGroup>
+                
+                <p:outputLabel value="Data de Criaçao" />
+                <h:panelGroup >
+                    <p:calendar size="10" pattern="dd/MM/aaaa" />
+                    a
+                    <p:calendar size="10" pattern="dd/MM/aaaa" />
+                </h:panelGroup>
+              
+                <p:outputLabel value="Vendedor" />
+                <p:inputText size = "40"/>
+                
+                 <p:outputLabel value="Cliente" />
+                 <p:inputText size = "40" />
+                
+                 <p:outputLabel value="Estatus" />
+                 
+                 <p:selectManyCheckbox >
+                     <f:selectItem itemLabel="Orçamento" />
+                     <f:selectItem itemLabel="Emitido" />
+                     <f:selectItem itemLabel="Cancelado" />
+                 </p:selectManyCheckbox>
+            </p:panelGrid>
+             
+            <p:dataTable id="produtosTable" value="#{pesquisaProdutoBean.produtosFiltrados}" 
+                var="produto" style="margin-top:20px" emptyMessage="Nenhum Produto Encontrado!"
+                rows="20" paginator="true"  paginatorAlwaysVisible="false"
+                paginatorPosition="bottom"   >
+                    
+                <p:column headerText="Numero" style="text-align: center; width: 50px" >
+                    <h:outputLabel value="12345" />
+                </p:column>
+                
+                <p:column headerText="Cliente" >
+                    <h:outputLabel value="Supermercado do Povo" />
+                </p:column>
+                
+                <p:column headerText="Vendedor" >
+                    <h:outputLabel value="Jose da Silva" />
+                </p:column>
+                
+                 <p:column headerText="Data de Criaçao" style="text-align: center; width: 100px" >
+                    <h:outputLabel value="10/10/2020" />
+                </p:column>
+                  
+                <p:column headerText="Valor Total" style="text-align: center; width: 100px" >
+                    <h:outputLabel value="120000,00" />
+                </p:column>
+                
+                <p:column headerText="Estatus" style="width: 100px" >
+                    <h:outputText value="Emitido" />
+                </p:column>
+                
+                <p:column headerText="Açoes"  style=" text-align: center; width: 100px">
+                    <p:button icon="ui-icon-pencil" title="Editar"/>
+                    <p:commandButton icon="ui-icon-trash" title="Excluir"/>
+                </p:column>
+                
+            </p:dataTable>
+            
+         </h:form>
+    </ui:define>
+</ui:composition>

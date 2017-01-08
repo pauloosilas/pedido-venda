@@ -26,11 +26,41 @@
     
     <h:body>
         <header>
-            <div>
-                <h:link>
+            <div style="float: left">
+                <h:link outcome="/home">
                     <p:graphicImage style="width: 150px; height: 90px" library="images" name="logo.png" />
                 </h:link>
             </div>
+            
+            <div style="float: right; margin-right: 110px">
+                <span style="float: left; height: 30px ; line-height: 30px; margin-right: 60px">
+                    Ola usuario
+                </span>
+                
+                <h:form style="display: inline-block">
+                    
+                    <p:menubar styleClass="menu-sistema">
+                        <p:submenu label="Cadastros">
+                            <p:menuitem value="Clientes" />
+                            <p:menuitem value="Usuarios" />
+                            <p:separator />
+                            
+                            <p:menuitem value="Categorias" />
+                            <p:menuitem value="Novo Produto" outcome="/produtos/cadastroproduto.xhtml" />
+                            <p:menuitem value="Pesquisa Produto" outcome="/produtos/pesquisarproduto.xhtml" />
+                        </p:submenu>
+                        
+                        <p:submenu label="Pedidos">
+                            <p:menuitem value="Novo Pedido" outcome="/pedidos/cadastropedido.xhtml" />
+                              <p:menuitem value="Pesquisa Pedidos" outcome="/pedidos/pesquisarpedido.xhtml" />
+                        </p:submenu>
+                           
+                        
+                        <p:menuitem value="sair" />
+                    </p:menubar>
+                </h:form>
+            </div>
+            <div style="clear: both"></div>
         </header>
         
     <div id="conteudo">

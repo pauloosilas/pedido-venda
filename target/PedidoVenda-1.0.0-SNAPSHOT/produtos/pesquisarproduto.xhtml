@@ -26,6 +26,7 @@
         
          <br/>
          <h:form>
+             
          <p:panelGrid columns="2" style="width: 100% ; margin-top: 30px" columnClasses="rotulo , campo">
                 <p:outputLabel value="SKU" for="sku" />
                 <p:inputText id="sku" maxlength="20" size="20"/>
@@ -61,11 +62,20 @@
              
              <p:column headerText="Açao" style="text-align: center; width: 100px" >
                  <p:button icon="ui-icon-pencil" title="Editar"/>
-                 <p:commandButton icon="ui-icon-trash" title="Excluir" />
+                 <p:commandButton oncomplete="confirm" icon="ui-icon-trash" title="Excluir" >
+                     <p:confirm header="Confirmacao"  message="Tem certeza que deseja excluir o produto?"/>
+                 </p:commandButton>
              </p:column>
              
-             
          </p:dataTable> 
-          </h:form>
+             
+             <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                <p:commandButton value="Nao" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+        </p:confirmDialog>          
+             
+         </h:form>
+         
+          
     </ui:define>
 </ui:composition>

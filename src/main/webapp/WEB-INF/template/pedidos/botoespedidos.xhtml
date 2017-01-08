@@ -5,7 +5,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
-
+    <h:form>
         <p:toolbar style="margin-top: 20px">
             
             <p:toolbarGroup>
@@ -14,7 +14,7 @@
             
             <p:toolbarGroup align="right">
                  
-                <p:button value="Emitir" />
+                <p:commandButton ajax="false" value="Emitir" />
                 <p:button value="Cancelar" />
                 <p:button value="Enviar Por Email" />
                 
@@ -24,5 +24,5 @@
             </p:toolbarGroup>
             
         </p:toolbar>
-  
+    </h:form>
 </ui:composition>

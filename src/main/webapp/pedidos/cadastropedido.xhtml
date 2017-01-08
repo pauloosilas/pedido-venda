@@ -12,10 +12,11 @@
         <br/><br/> <br/><br/>
         <h1>Novo Pedido </h1>
         
-              
-            <ui:include src="/WEB-INF/template/pedidos/botoespedidos.xhtml" />
+        
+        <ui:include src="/WEB-INF/template/pedidos/botoespedidos.xhtml" />
             <ui:include src="/WEB-INF/template/pedidos/capapedido.xhtml" />
        
+            
             <p:tabView style="padding-top: 20px" >
                 <p:tab title="Itens">
                        <ui:include src="/WEB-INF/template/pedidos/itenspedido.xhtml" />
@@ -31,6 +32,7 @@
                     
                 </p:tab>
             </p:tabView>
+           
             
     </ui:define>
 </ui:composition>
